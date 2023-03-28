@@ -1,6 +1,6 @@
 #import libraries below here
 #________________________________________________________________
-from src import tgame as tg
+from src import tGame as tg
 #Pre-Game Setup/Variable(s) below here
 #________________________________________________________________
 #Load files into variables lib### for libraries and file### for other files.
@@ -33,6 +33,7 @@ def main():
             hold = 1
         if chi.lower() in ["s", "settings", "setting", "set"]:
             print("No settings yet.")
+            tg.settings()
             tg.wait(2)
             hold = 1
         if chi.lower() in ["q", "quit", "exit", "exit game"]:
