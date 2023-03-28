@@ -1,6 +1,8 @@
 #import libraries below here
 #________________________________________________________________
 from src import tGame as tg
+import pathlib
+import os
 #Pre-Game Setup/Variable(s) below here
 #________________________________________________________________
 #Load files into variables lib### for libraries and file### for other files.
@@ -18,7 +20,13 @@ def main():
     # Main menu
     hold = 1
     while hold == 1:
-        fileSettings = tg.fromJson(r"settings.json")
+        tg.clear()
+        try:
+            fileSettings = tg.fromJson(r"settings.json")
+        except FileNotFoundError:
+            os.system("copy .\\json\\defaultSettings.json .\\ >nul")
+            os.rename(".\\defaultSettings.json", "settings.json")
+            fileSettings = tg.fromJson(r"settings.json")
         inputChar = fileSettings.get('inputChar')
         screenWidth = fileSettings.get('screenWidth')
         tg.clear
