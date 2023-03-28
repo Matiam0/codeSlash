@@ -1,0 +1,18 @@
+{
+    "intro":{
+        "1":"Such story!",
+        "2":"Anyone paying attention?",
+        "3":"Barely passing out.",
+        "4":"Credits please!",
+        "5":"Dreadfully bland.",
+        "6":"Efficient use of skill [Bore]",
+        "7":"Fast asleep."
+    },
+    "story":{
+        "1":"Story"
+    },
+    "credits":{
+        "1":"Nope.",
+        "2":"No credits here."
+    }
+}
