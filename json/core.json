@@ -1,7 +1,4 @@
 {
-    "gameName":"tGame",
-    "version":"0.1.15",
-    "gameState":"dev",
     "menuMain":{
         "line1": "_____________",
         "line2": "| New Game  |",
@@ -18,35 +15,5 @@
         "line5": "| Settings  |",
         "line6": "| Quit      |",
         "line7": "\\___________|"
-    },
-    "title": {
-        "line1":"",
-        "line2":"tGame v0.1.15 [dev]",
-        "line3":""
-    },
-    "intro":{
-        "1":"Such story!",
-        "2":"Anyone paying attention?",
-        "3":"Barely passing out.",
-        "4":"Credits please!",
-        "5":"Dreadfully bland.",
-        "6":"Efficient use of skill [Bore]",
-        "7":"Fast asleep."
-    },
-    "story":{
-        "1":"Story"
-    },
-    "races":{
-        "1":"Turtle",
-        "2":"Ghostbaster",
-        "3":"Zombrella",
-        "4":"Centilphin",
-        "5":"Halvodr",
-        "6":"Lucaria"
-    },
-    "credits":{
-        "1":"Nope.",
-        "2":"No credits here."
-    },
-    "centerValue": 58
+    }
 }
