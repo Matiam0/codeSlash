@@ -36,7 +36,29 @@ def main():
         if chi.lower() in ["n", "new", "newgame", "new game"]:
             hold = 0
         if chi.lower() in ["l", "load"]:
-            print("Saving/Loading not implemented yet.")
+            # print("Saving/Loading not implemented yet.")
+            saveFile = tg.fromJson(r"save.json")
+            tg.clear()
+            tg.menu(libCore,title,screenWidth,option="menuMain")
+            tg.center("Select a slot to load from.",screenWidth)
+            tg.fromJson(saveFile,get="full")
+            chi2 = input(inputChar.rjust(int(inputWidth)))
+            try:
+                chi2 = int(chi2,base=10)
+            except ValueError:
+                print("Invalid slot number.")
+            if chi2 == 0:
+                save = saveFile.get('slot0')
+                print(f"Loaded {save}.")
+            if chi2 == 1:
+                save = saveFile.get('slot1')
+                print(f"Loaded {save}.")
+            if chi2 == 2:
+                save = saveFile.get('slot2')
+                print(f"Loaded {save}.")
+            if chi2 == 3:
+                save = saveFile.get('slot3')
+                print(f"Loaded {save}.")
             tg.wait(2)
             hold = 1
         if chi.lower() in ["s", "settings", "setting", "set"]:
@@ -45,6 +67,9 @@ def main():
         if chi.lower() in ["q", "quit", "exit", "exit game"]:
             print("Exiting game...")
             tg.wait(2)
+            tg.clear()
+            print("Goodbye, TT__TT")
+            tg.wait(1)
             exit()
     tg.wait(3)
     ##Character creation starts here.
