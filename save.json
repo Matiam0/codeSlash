@@ -2,5 +2,6 @@
     "slot0":{},
     "slot1":{},
     "slot2":{},
-    "slot3":{}
+    "slot3":{},
+    "version": "0.1.17a"
 }

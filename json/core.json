@@ -1,5 +1,5 @@
 {
-    "menuMain":{
+    "menuMainA":{
         "line1": "_____________",
         "line2": "| New Game  |",
         "line3": "| Load      |",
@@ -7,13 +7,23 @@
         "line5": "| Quit      |",
         "line6": "\\___________|"
     },
-    "menuGame":{
+    "menuMainB": {
         "line1": "_____________",
-        "line2": "| New Game  |",
-        "line3": "| Load      |",
-        "line4": "| Save      |",
+        "line2": "| Continue  |",
+        "line3": "| New Game  |",
+        "line4": "| Load      |",
         "line5": "| Settings  |",
         "line6": "| Quit      |",
-        "line7": "\\___________|"
+        "line7": "\\___________"
+    },
+    "menuGame":{
+        "line1": "_____________",
+        "line2": "| Continue  |",
+        "line3": "| New Game  |",
+        "line4": "| Load      |",
+        "line5": "| Save      |",
+        "line6": "| Settings  |",
+        "line7": "| Quit      |",
+        "line8": "\\___________|"
     }
 }
