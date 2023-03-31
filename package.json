@@ -1,7 +1,0 @@
-{
-    "name": "colonSlash",
-    "version": "0.1.17a",
-    "devDependencies": {
-      "auto-changelog": "*"
-    }
-}
