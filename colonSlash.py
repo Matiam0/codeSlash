@@ -14,7 +14,7 @@ except FileNotFoundError:
 try:
     libRaces = tg.fromJson(r".\json\races.json")
 except FileNotFoundError:
-    libRaces = {"races":{"1":"Turtle","2":"Ghostbaster","3":"Zombrella","4":"Centilphin","5":"Halvodr","6":"Lucaria"}}
+    libRaces = {"races":{"Turtle":"Just your classic snapping turtle.","Ghostbaster":"A ghost chef, that doesn't mind cooking  their own.","Zombrella":"Zombie. Umbrella. ett.","Centilphin":"Centipedal dolphin... Nightmare fuel.","Halvodr":"Living magma-crystal-stone people.","Lucaria":"Furies."}}
 
 try:
     libISC = tg.fromJson(r".\json\story.json")
