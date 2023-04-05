@@ -19,3 +19,7 @@ cspell.json
 .vscode\*
 .vscode\settings.json
 .\.vscode\settings.json
+.vscode
+.vscode*
+.gitignore
+.\.gitignore
