@@ -3,9 +3,9 @@
 import os
 import json as js
 import random as r
+import sys
 from os.path import exists
 from time import sleep
-from sys import exit
 # Pre-Game Setup/Variable(s) below here
 # ________________________________________________________________
 # Tru Load files into variables lib### for libraries and file### for other files if not found use built in.
@@ -107,7 +107,7 @@ def main():
             if fileSettings.get('version') != gameVersion:
                 os.remove('settings.json')
         except FileNotFoundError:
-            defaultSettings = {"screenWidth": "60", "inputChar": ":\\"}
+            defaultSettings = {"version":{gameVersion},"screenWidth": "60", "inputChar": ":\\"}
             with open('settings.json', mode='w', encoding= str) as f:
                 js.dump(defaultSettings, f,  indent=4)
             fileSettings = fromJson(r"settings.json")
@@ -116,7 +116,7 @@ def main():
         screenWidth = fileSettings.get('screenWidth')
         # Start of actual menuMain loop.
         clear()
-        menu(libCore, title, screenWidth, option=menu)
+        menu(libCore, title, screenWidth, option='menuMain')
         # Math to calculate where to place the input area.
         inputWidth = (int(screenWidth)/2 - (len(inputChar) * 2.5))
         # Choice input followed by if checklist for input in .lower().
@@ -166,7 +166,7 @@ def main():
             clear()
             print("Goodbye, TT__TT")  # I cri.
             wait(1)
-            exit()
+            sys.exit()
     wait(3)
     # Character creation starts here.
     # ? Maybe make character creation it's own function in tgame.
@@ -272,6 +272,13 @@ def settings(fileSettings):
         os.remove('settings.json')
     else:
         print("Invalid option, returning to menu.")
+
+def createCharacter(libC,libRaces, title, screenWidth=0):
+    hold = 1
+    while hold == 1:
+        menu(libC, title, screenWidth, option="title")
+        
+        print("Starting Character Creation.")
 
 
 # todo fix loading bar
