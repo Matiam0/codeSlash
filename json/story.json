@@ -1,0 +1,25 @@
+{
+    "intro":{
+        "line1":"Such story!",
+        "line2":"Anyone paying attention?",
+        "line3":"Barely passing out.",
+        "line4":"Credits please!",
+        "line5":"Dreadfully bland.",
+        "line6":"Efficient use of skill [Bore]",
+        "line7":"Fast asleep."
+    },
+    "story":{
+        "line1":"Story"
+    },
+    "credits":{
+        "line1":"Nope.",
+        "line2":"No credits here.",
+        "line3":".",
+        "line4":"..",
+        "line5":"...",
+        "line6":".",
+        "line7":"..",
+        "line8":"...",
+        "line9":"Are you still here?"
+    }
+}
