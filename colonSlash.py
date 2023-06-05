@@ -17,7 +17,7 @@ def main():
     except FileNotFoundError:
         libCore = {
             "gameName": "colonSlash",
-            "version": "0.1.18a",
+            "version": "0.1.19a",
             "menuMainA": {
                 "line1": "_____________",
                 "line2": "| New Game  |",
