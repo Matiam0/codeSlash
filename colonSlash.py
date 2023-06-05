@@ -1,10 +1,11 @@
 # import libraries below here
 # ________________________________________________________________
-from os import system, remove, name as os
-from sys import exit
+import os
 import json as js
 import random as r
-import pathlib
+from os.path import exists
+from time import sleep
+from sys import exit
 # Pre-Game Setup/Variable(s) below here
 # ________________________________________________________________
 # Tru Load files into variables lib### for libraries and file### for other files if not found use built in.
@@ -104,7 +105,7 @@ def main():
         try:
             fileSettings = fromJson(r"settings.json")
             if fileSettings.get('version') != gameVersion:
-                system.remove('settings.json')
+                os.remove('settings.json')
         except FileNotFoundError:
             defaultSettings = {"screenWidth": "60", "inputChar": ":\\"}
             with open('settings.json', mode='w', encoding= str) as f:
@@ -155,7 +156,7 @@ def main():
                 loaded = True
                 hold = 1
             else:
-                remove('save.json')
+                os.remove('save.json')
         if chi.lower() in ["s", "settings", "setting", "set"]:
             settings(fileSettings)
             hold = 1
@@ -188,7 +189,6 @@ def clear():
 
 
 def wait(n):
-    from time import sleep
     sleep(n)
 
 # RPG def below here
@@ -257,7 +257,7 @@ def menu(libC, title="Title Here", screenWidth=0, option="title"):
 
 
 def check(file):
-    check = pathlib.exists()(file)
+    check = exists(file)
     return check
 
 
@@ -269,10 +269,9 @@ def settings(fileSettings):
         fileSettings[ch] = input("New value: ")
         fromJson(fileSettings, get="save")
     elif ch == "reset":
-        import os
         os.remove('settings.json')
     else:
-        print(f"Invalid option, returning to menu.")
+        print("Invalid option, returning to menu.")
 
 
 # todo fix loading bar
