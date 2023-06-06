@@ -17,7 +17,7 @@ def main():
     except FileNotFoundError:
         libCore = {
             "gameName": "colonSlash",
-            "version": "0.1.19a",
+            "version": "0.0.1",
             "menuMainA": {
                 "line1": "_____________",
                 "line2": "| New Game  |",
@@ -52,13 +52,7 @@ def main():
     except FileNotFoundError:
         libRaces = {
             "races": {
-                "Turtle": "Just your classic snapping turtle.", 
-                "Ghostbaster": "A ghost chef, that doesn't mind cooking  their own. +1 Spirit -1 STR",
-                "Zombrella": "Zombie. Umbrella. ett. +1 STR -1 INT", 
-                "Centilphin": "Centipedal dolphin... Nightmare fuel. +1 AGI -1 ", 
-                "Halvodr": "Living magma-crystal-stone people.", 
-                "Lucaria": "Weird mixed race.",
-                "Memphis": "Cat person"
+                "Human": "Basic.",
             }
         }
 
@@ -192,15 +186,11 @@ def clear():
 def wait(n):
     sleep(n)
 
-# RPG def below here
-
-# Game functions
-
+# tGame Functions Below.
 
 def rollDice(sides):
     roll = r.randint(1, sides)
     return roll
-
 
 def fromJson(file, screenWidth=0, get="init", isCenter=False):
     width = int(screenWidth)
@@ -223,12 +213,10 @@ def fromJson(file, screenWidth=0, get="init", isCenter=False):
         data = js.load(open(file, "r", encoding=str))
         return data
 
-
 def save(file, path=".\\"):
     filePath = f"{path}{file}.json"
     with open(file, "w", encoding=str) as f:
         js.dump(filePath, f, indent=4)
-
 
 def barSeparator(screenWidth):
     width = int(screenWidth)
@@ -237,12 +225,10 @@ def barSeparator(screenWidth):
         width = width - 1
     print()
 
-
 def center(title, screenWidth):
     title = str(title)
     width = int(screenWidth)
     print(title.center(width))
-
 
 def menu(libC, title="Title Here", screenWidth=0, option="title"):
     menuMain = libC.get('menuMain')
@@ -256,11 +242,9 @@ def menu(libC, title="Title Here", screenWidth=0, option="title"):
         center(title, screenWidth)
         barSeparator(screenWidth)
 
-
 def check(file):
     check = exists(file)
     return check
-
 
 def settings(fileSettings):
     fromJson(fileSettings, screenWidth=0, get="full")
@@ -308,10 +292,11 @@ def createCharacter(libC,libRaces, title, screenWidth=0):
 def skillText(text):
     print(f"{text}")
 
-
 def creationBar(name, gender, age, race, centerValue):
     text = (f"Name: {name}, Gender: {gender}, Age: {age}, Race: {race}")
     print(text.center(centerValue))
 
+# End of tGame Integrated.
 
+#Run Main
 main()
