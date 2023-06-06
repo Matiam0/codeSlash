@@ -103,7 +103,7 @@ def main():
                 os.remove('settings.json')
         except FileNotFoundError:
             defaultSettings = {"version":{gameVersion},"screenWidth": "60", "inputChar": ":\\"}
-            with open('settings.json', mode='w', encoding= str) as f:
+            with open('settings.json', mode='w') as f:
                 js.dump(defaultSettings, f,  indent=4)
             fileSettings = fromJson(r"settings.json")
         # Pull from settings the inputCharacter for choices, and the screen width for the game.
@@ -170,9 +170,8 @@ def main():
     # ? Maybe make the storyteller procedural.
     # ? Checkpoint system? Include in save file or create new file to save last used story for when loading.
 
-
 #!Read Me
-# tGame Version 0.0.2a
+# Custom Functions.
 
 def clear():
     if (os.name == 'posix'):
@@ -182,11 +181,10 @@ def clear():
 
 # define sleep as an easy to call function
 
-
 def wait(n):
     sleep(n)
 
-# tGame Functions Below.
+# tGame integrated functions below.
 
 def rollDice(sides):
     roll = r.randint(1, sides)
@@ -210,7 +208,7 @@ def fromJson(file, screenWidth=0, get="init", isCenter=False):
         for k, v in file.items():
             print(f"{k} : {v}")
     if get.lower() == "init":
-        data = js.load(open(file, "r", encoding=str))
+        data = js.load(open(file, "r"))
         return data
 
 def save(file, path=".\\"):
