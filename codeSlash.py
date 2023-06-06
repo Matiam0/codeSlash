@@ -3,7 +3,7 @@
 import os
 import json as js
 import random as r
-import sys
+import sys as s
 from os.path import exists
 from time import sleep
 # Pre-Game Setup/Variable(s) below here
@@ -16,7 +16,7 @@ def main():
         libCore = fromJson(r".\json\core.json")
     except FileNotFoundError:
         libCore = {
-            "gameName": "colonSlash",
+            "gameName": "codeSlash",
             "version": "0.0.1",
             "menuMainA": {
                 "line1": "_____________",
@@ -98,7 +98,7 @@ def main():
         clear()
         # Check for settings file and make one if it doesn't exist from the defaultSettings.
         try:
-            fileSettings = fromJson(r"settings.json")
+            fileSettings = fromJson(r'settings.json')
             if fileSettings.get('version') != gameVersion:
                 os.remove('settings.json')
         except FileNotFoundError:
@@ -111,7 +111,7 @@ def main():
         screenWidth = fileSettings.get('screenWidth')
         # Start of actual menuMain loop.
         clear()
-        menu(libCore, title, screenWidth, option='menuMain')
+        menu(libCore, title, screenWidth, option=menu)
         # Math to calculate where to place the input area.
         inputWidth = (int(screenWidth)/2 - (len(inputChar) * 2.5))
         # Choice input followed by if checklist for input in .lower().
