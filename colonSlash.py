@@ -53,11 +53,12 @@ def main():
         libRaces = {
             "races": {
                 "Turtle": "Just your classic snapping turtle.", 
-                "Ghostbaster": "A ghost chef, that doesn't mind cooking  their own.",
-                "Zombrella": "Zombie. Umbrella. ett.", 
-                "Centilphin": "Centipedal dolphin... Nightmare fuel.", 
+                "Ghostbaster": "A ghost chef, that doesn't mind cooking  their own. +1 Spirit -1 STR",
+                "Zombrella": "Zombie. Umbrella. ett. +1 STR -1 INT", 
+                "Centilphin": "Centipedal dolphin... Nightmare fuel. +1 AGI -1 ", 
                 "Halvodr": "Living magma-crystal-stone people.", 
-                "Lucaria": "Furies."
+                "Lucaria": "Weird mixed race.",
+                "Memphis": "Cat person"
             }
         }
 
