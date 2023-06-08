@@ -1,5 +1,10 @@
 # colonSlash Planning
 
+## Items
+
+ - Rarity color coding
+
+
 ## Stats
 
 - PHYSICAL
