@@ -32,3 +32,7 @@ No changes.
 +1 PHY -1 SPI
 **Kitsune** - Adv SPI low INT.
 +1 SPI -1 INT
+
+## Settings
+ - Screen width
+ - Font color
