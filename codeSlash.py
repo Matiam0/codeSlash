@@ -7,6 +7,20 @@ from os import remove, system, name
 from time import sleep
 # Pre-Game Setup/Variable(s) below here
 maxStats = 20
+menu = {
+    "0":{
+        "l1":"",
+        "l2":"",
+    },
+    "1":{
+        "l1":"",
+        "l2":"",
+    },
+    "2":{
+        "l1":"",
+        "l2":"",
+    }
+    }
 # ________________________________________________________________
 
 # Custom Functions.
