@@ -3,6 +3,7 @@
 ## v0.0.2
 
 - W.I.P. Planned to get character creation together as either a tGame command or in script process.
++ moved rjust, cjust, and title to ANSI class.
 
 ## v0.0.1
 

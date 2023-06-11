@@ -6,6 +6,7 @@ from sys import exit
 from os import remove, system, name
 from time import sleep
 # Pre-Game Setup/Variable(s) below here
+maxStats = 20
 # ________________________________________________________________
 
 # Custom Functions.
@@ -25,20 +26,31 @@ class tGame():
         roll = randint(1, sides)
         return roll
 
-    def cjust(text, width=-1):
-      lines = text.split('\n')
-      width = max(map(len, lines)) if width == -1 else width
-      return '\n'.join(line.center(width) for line in lines)
-
-    def rjust(text,width=-1):
-        lines = text.split('\n')
-        width = max(map(len,lines)) if width == -1 else width
-        return '\n'.join(line.rjust(width) for line in lines)
-
-    def title(text,width=100):
-        text = ANSI.color(text,90,31,1)
-        print(tGame.cjust(text,width))
-        ANSI.cclear()
+    class charInit():
+        ##Defaults
+        statusDefault = {
+            "fName":"Mafe",
+            "lName":"Roe",
+            "Level": 0,
+            "Exp":0,
+            "Stats":{
+                "Physical":{
+                    "Strength":3,
+                    "Agility":3
+                    },
+                "Spirit":{
+                    "Lore":3,
+                    "Determination":3
+                },
+                "Mental":{
+                    "Intelligence":3,
+                    "Charisma":3
+                }
+            }
+        }
+        def create(status=statusDefault):
+            print()
+            
 
 class ANSI():
     def background(code):
@@ -57,6 +69,21 @@ class ANSI():
         output = ANSI.background(bg) + ANSI.style_text(style) + ANSI.color_text(color) + text
         return output
 
+    def cjust(text, width=-1):
+      lines = text.split('\n')
+      width = max(map(len, lines)) if width == -1 else width
+      return '\n'.join(line.center(width) for line in lines)
+
+    def rjust(text,width=-1):
+        lines = text.split('\n')
+        width = max(map(len,lines)) if width == -1 else width
+        return '\n'.join(line.rjust(width) for line in lines)
+
+    def title(text,width=100):
+        text = ANSI.color(text,90,31,1)
+        print(ANSI.cjust(text,width))
+        ANSI.cclear()
+
 # End of tGame Integrated.
 #Define Main
 def main():
@@ -68,6 +95,7 @@ def main():
     tGame.title(test_text)
     wait(3)
     clear()
+    tGame.charInit.create()
     # Character creation starts here.
     # ? Maybe make character creation it's own function in tgame.
 

@@ -16,11 +16,11 @@ These are the current stats planned. Subject to change.
   - STRENGTH
   - AGILITY
 - SPIRIT
-  - CONSTITUTION
+  - DETERMINATION
   - LORE
-- INTELLIGENCE
+- MENTAL
+  - INTELLIGENCE
   - CHARISMA
-  - LOGIC
 
 ## Races
 
