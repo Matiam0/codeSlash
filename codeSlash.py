@@ -21,10 +21,14 @@ def wait(n):
     sleep(n)
 
 # tGame integrated functions below.
-class tGame():
+class game():
     def rollDice(sides):
         roll = randint(1, sides)
         return roll
+    
+    def fromDic(dic):
+        for i,v in dic:
+            print(f"{i}:{v}")
 
     class charInit():
         ##Defaults
@@ -52,37 +56,28 @@ class tGame():
             print()
             
 
-class ANSI():
-    def background(code):
-        return "\33[{code}m".format(code=code)
- 
-    def style_text(code):
-        return "\33[{code}m".format(code=code)
- 
-    def color_text(code):
+class tFormat():
+    def fCode(code):
         return "\33[{code}m".format(code=code)
 
-    def cclear():
-        print(ANSI.background(0) + ANSI.style_text(0) + ANSI.color_text(0))
+    def fClear():
+        print(tFormat.fCode(0))
 
-    def color(text="test",bg=0,style=0,color=0):
-        output = ANSI.background(bg) + ANSI.style_text(style) + ANSI.color_text(color) + text
-        return output
-
-    def cjust(text, width=-1):
+    def cJustify(text, width=-1):
       lines = text.split('\n')
       width = max(map(len, lines)) if width == -1 else width
       return '\n'.join(line.center(width) for line in lines)
 
-    def rjust(text,width=-1):
+    def rJustify(text,width=-1):
         lines = text.split('\n')
         width = max(map(len,lines)) if width == -1 else width
         return '\n'.join(line.rjust(width) for line in lines)
 
-    def title(text,width=100):
-        text = ANSI.color(text,90,31,1)
-        print(ANSI.cjust(text,width))
-        ANSI.cclear()
+    def fTitle(text,width=100,bg="40",st="31",cc="1"):
+        print(tFormat.fCode(bg) + tFormat.fCode(st) + tFormat.fCode(cc),end="")
+        text = tFormat.fCode(bg) + tFormat.fCode(st) + tFormat.fCode(cc) + text
+        print(tFormat.cJustify(text,width))
+        tFormat.cclear()
 
 # End of tGame Integrated.
 #Define Main
@@ -92,7 +87,7 @@ def main():
     # Todo: Settings for screen width - set[0], color - set[1], tbd
     # Todo: Stat randomizer w/ re-roll function
     test_text = "Hello stranger."
-    tGame.title(test_text)
+    tFormat.fTitle(test_text)
     wait(3)
     clear()
     tGame.charInit.create()
