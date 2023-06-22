@@ -9,8 +9,11 @@ from time import sleep
 maxStats = 20
 menu = {
     "0":{
-        "l1":"",
-        "l2":"",
+        "l1":"/-----------------------------------------------------------------------------------------",
+        "l2":"| 1 |    New Game         /",
+        "l3":"| 2 |    Load Game        |",
+        "l4":"| 3 |    Settings         |",
+        "l5":"\------------------------/"
     },
     "1":{
         "l1":"",
@@ -65,6 +68,9 @@ class game():
                     "Charisma":3
                 }
             }
+        }
+        inventoryDefault = {
+            "Slot 1" : "Empty",
         }
         def create(status=statusDefault):
             print()
