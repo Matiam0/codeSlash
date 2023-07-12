@@ -38,7 +38,7 @@ def wait(n):
     sleep(n)
 
 # tGame integrated functions below.
-class game():
+class tGame():
     def rollDice(sides):
         roll = randint(1, sides) # type: ignore
         return roll
@@ -110,7 +110,7 @@ def main():
     tFormat.fTitle(test_text) # type: ignore
     wait(3)
     clear()
-    game.charInit.create() # type: ignore
+    tGame.charInit.create() # type: ignore
     # Character creation starts here.
     # ? Maybe make character creation it's own function in tgame.
 
@@ -120,3 +120,5 @@ def main():
 
 #Run Main
 main()
+
+
