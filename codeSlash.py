@@ -40,11 +40,11 @@ def wait(n):
 # tGame integrated functions below.
 class game():
     def rollDice(sides):
-        roll = randint(1, sides)
+        roll = randint(1, sides) # type: ignore
         return roll
     
     def fromDic(dic):
-        for i,v in dic:
+        for i,v in dic: # type: ignore
             print(f"{i}:{v}")
 
     class charInit():
@@ -72,7 +72,7 @@ class game():
         inventoryDefault = {
             "Slot 1" : "Empty",
         }
-        def create(status=statusDefault):
+        def create(statusDefault):
             print()
             
 
@@ -80,24 +80,24 @@ class tFormat():
     def fCode(code):
         return "\33[{code}m".format(code=code)
 
-    def fClear():
-        print(tFormat.fCode(0))
+    def fClear(): # type: ignore
+        print(tFormat.fCode(0)) # type: ignore
 
     def cJustify(text, width=-1):
-      lines = text.split('\n')
+      lines = text.split('\n') # type: ignore
       width = max(map(len, lines)) if width == -1 else width
       return '\n'.join(line.center(width) for line in lines)
 
     def rJustify(text,width=-1):
-        lines = text.split('\n')
+        lines = text.split('\n') # type: ignore
         width = max(map(len,lines)) if width == -1 else width
         return '\n'.join(line.rjust(width) for line in lines)
 
     def fTitle(text,width=100,bg="40",st="31",cc="1"):
-        print(tFormat.fCode(bg) + tFormat.fCode(st) + tFormat.fCode(cc),end="")
-        text = tFormat.fCode(bg) + tFormat.fCode(st) + tFormat.fCode(cc) + text
+        print(tFormat.fCode(bg) + tFormat.fCode(st) + tFormat.fCode(cc),end="") # type: ignore
+        text = tFormat.fCode(bg) + tFormat.fCode(st) + tFormat.fCode(cc) + text # type: ignore
         print(tFormat.cJustify(text,width))
-        tFormat.cclear()
+        tFormat.cclear() # type: ignore
 
 # End of tGame Integrated.
 #Define Main
@@ -107,10 +107,10 @@ def main():
     # Todo: Settings for screen width - set[0], color - set[1], tbd
     # Todo: Stat randomizer w/ re-roll function
     test_text = "Hello stranger."
-    tFormat.fTitle(test_text)
+    tFormat.fTitle(test_text) # type: ignore
     wait(3)
     clear()
-    tGame.charInit.create()
+    game.charInit.create() # type: ignore
     # Character creation starts here.
     # ? Maybe make character creation it's own function in tgame.
 
