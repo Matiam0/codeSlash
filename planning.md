@@ -1,7 +1,17 @@
 # colonSlash Planning
 
+## Items
+
+ - Rarity color coding
+
+
 ## Stats
 
+Stats are displayed as
+- primary
+ - secondary
+
+These are the current stats planned. Subject to change.
 - PHYSICAL
   - STRENGTH
   - AGILITY
@@ -12,12 +22,10 @@
   - CHARISMA
   - LOGIC
 
-PHY - STR, AGI
-SPI - CON, WIS
-INT - CHA, LOG
-
 ## Races
 
+Races will only have an effect on primary stats, that are an average of their secondary sub-stats.
+In the game the player will not be able to change primary stats with skill points only secondary.
 **Human** - Basic no benefits.
 No changes.
 **Spirit** - Adv SPI low PHY.
