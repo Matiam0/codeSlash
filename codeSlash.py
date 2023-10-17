@@ -24,6 +24,30 @@ menu = {
         "l2":"",
     }
     }
+##Defaults
+statusDefault = {
+    "fName":"Mafe",
+    "lName":"Roe",
+    "Level": 0,
+    "Exp":0,
+    "Stats":{
+        "Physical":{
+            "Strength":3,
+            "Agility":3
+            },
+        "Spirit":{
+            "Lore":3,
+            "Determination":3
+        },
+        "Mental":{
+            "Intelligence":3,
+            "Charisma":3
+        }
+    }
+}
+inventoryDefault = {
+    "Slot 1" : "Empty",
+}
 # ________________________________________________________________
 
 # Custom Functions.
@@ -48,32 +72,8 @@ class tGame():
             print(f"{i}:{v}")
 
     class charInit():
-        ##Defaults
-        statusDefault = {
-            "fName":"Mafe",
-            "lName":"Roe",
-            "Level": 0,
-            "Exp":0,
-            "Stats":{
-                "Physical":{
-                    "Strength":3,
-                    "Agility":3
-                    },
-                "Spirit":{
-                    "Lore":3,
-                    "Determination":3
-                },
-                "Mental":{
-                    "Intelligence":3,
-                    "Charisma":3
-                }
-            }
-        }
-        inventoryDefault = {
-            "Slot 1" : "Empty",
-        }
-        def create(statusDefault):
-            print()
+        def create(statusDefault,inventoryDefault):
+            print(f"Default status: ", statusDefault, "Default Inventory: ", inventoryDefault)
             
 
 class tFormat():
@@ -97,7 +97,7 @@ class tFormat():
         print(tFormat.fCode(bg) + tFormat.fCode(st) + tFormat.fCode(cc),end="") # type: ignore
         text = tFormat.fCode(bg) + tFormat.fCode(st) + tFormat.fCode(cc) + text # type: ignore
         print(tFormat.cJustify(text,width))
-        tFormat.cclear() # type: ignore
+        tFormat.fClear() # type: ignore
 
 # End of tGame Integrated.
 #Define Main
