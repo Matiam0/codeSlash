@@ -24,6 +24,29 @@ menu = {
         "l2":"",
     }
     }
+statusDefault = {
+    "fName":"Mafe",
+    "lName":"Roe",
+    "Level": 0,
+    "Exp":0,
+    "Stats":{
+        "Physical":{
+            "Strength":3,
+            "Agility":3
+            },
+        "Spirit":{
+            "Lore":3,
+            "Determination":3
+        },
+        "Mental":{
+            "Intelligence":3,
+            "Charisma":3
+        }
+    }
+}
+inventoryDefault = {
+    "Slot_1" : "Empty",
+}
 # ________________________________________________________________
 
 # Custom Functions.
@@ -47,33 +70,10 @@ class tGame():
         for i,v in dic: # type: ignore
             print(f"{i}:{v}")
 
-    class charInit():
-        ##Defaults
-        statusDefault = {
-            "fName":"Mafe",
-            "lName":"Roe",
-            "Level": 0,
-            "Exp":0,
-            "Stats":{
-                "Physical":{
-                    "Strength":3,
-                    "Agility":3
-                    },
-                "Spirit":{
-                    "Lore":3,
-                    "Determination":3
-                },
-                "Mental":{
-                    "Intelligence":3,
-                    "Charisma":3
-                }
-            }
-        }
-        inventoryDefault = {
-            "Slot 1" : "Empty",
-        }
-        def create(statusDefault):
-            print()
+    class character():
+        def create(statusDefault,inventoryDefault):
+            print(statusDefault)
+            print(inventoryDefault)
             
 
 class tFormat():
@@ -97,7 +97,7 @@ class tFormat():
         print(tFormat.fCode(bg) + tFormat.fCode(st) + tFormat.fCode(cc),end="") # type: ignore
         text = tFormat.fCode(bg) + tFormat.fCode(st) + tFormat.fCode(cc) + text # type: ignore
         print(tFormat.cJustify(text,width))
-        tFormat.cclear() # type: ignore
+        tFormat.fClear() # type: ignore
 
 # End of tGame Integrated.
 #Define Main
@@ -110,7 +110,7 @@ def main():
     tFormat.fTitle(test_text) # type: ignore
     wait(3)
     clear()
-    tGame.charInit.create() # type: ignore
+    tGame.character.create(statusDefault,inventoryDefault)
     # Character creation starts here.
     # ? Maybe make character creation it's own function in tgame.
 
